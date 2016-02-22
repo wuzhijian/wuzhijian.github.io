@@ -4,19 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>mysql和redis的主从复制原理 | 坚果博客</title>
+  <title>leetcode 1: Two Sum | 坚果博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近工作需要，做一个rdf数据库的主从集群，由于rdf数据库本身不支持主从复制功能，所以考虑从上一层应用实现主从复制。并参考mysql和redis的主从复制实现原理，实现较为简单的主从复制功能。本文分别介绍mysql和redis的主从复制。">
+  <meta name="description" content="题目:Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution.
+Example:Given nums = [2, 7,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql和redis的主从复制原理">
-<meta property="og:url" content="http://wuzhjian.github.io/2016/02/22/mysql和redis的主从复制原理/index.html">
+<meta property="og:title" content="leetcode 1: Two Sum">
+<meta property="og:url" content="http://wuzhjian.github.io/2016/02/22/leetcode-1-Two-Sum/index.html">
 <meta property="og:site_name" content="坚果博客">
-<meta property="og:description" content="最近工作需要，做一个rdf数据库的主从集群，由于rdf数据库本身不支持主从复制功能，所以考虑从上一层应用实现主从复制。并参考mysql和redis的主从复制实现原理，实现较为简单的主从复制功能。本文分别介绍mysql和redis的主从复制。">
-<meta property="og:image" content="http://7xr41w.com1.z0.glb.clouddn.com/clipboard.png">
-<meta property="og:updated_time" content="2016-02-22T14:50:35.331Z">
+<meta property="og:description" content="题目:Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution.
+Example:Given nums = [2, 7,">
+<meta property="og:updated_time" content="2016-02-22T15:19:38.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql和redis的主从复制原理">
-<meta name="twitter:description" content="最近工作需要，做一个rdf数据库的主从集群，由于rdf数据库本身不支持主从复制功能，所以考虑从上一层应用实现主从复制。并参考mysql和redis的主从复制实现原理，实现较为简单的主从复制功能。本文分别介绍mysql和redis的主从复制。">
+<meta name="twitter:title" content="leetcode 1: Two Sum">
+<meta name="twitter:description" content="题目:Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution.
+Example:Given nums = [2, 7,">
   
   
   <link rel="stylesheet" href="/css/style.css" type="text/css">
@@ -169,11 +171,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-mysql和redis的主从复制原理" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-leetcode-1-Two-Sum" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/22/mysql和redis的主从复制原理/" class="article-date">
-  	<time datetime="2016-02-22T14:39:06.000Z" itemprop="datePublished">2016-02-22</time>
+      <a href="/2016/02/22/leetcode-1-Two-Sum/" class="article-date">
+  	<time datetime="2016-02-22T15:13:19.000Z" itemprop="datePublished">2016-02-22</time>
 </a>
     </div>
   
@@ -186,7 +188,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      mysql和redis的主从复制原理
+      leetcode 1: Two Sum
     </h1>
   
 
@@ -195,7 +197,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主从复制/">主从复制</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
 	</div>
 
         
@@ -206,12 +208,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近工作需要，做一个rdf数据库的主从集群，由于rdf数据库本身不支持主从复制功能，所以考虑从上一层应用实现主从复制。并参考mysql和redis的主从复制实现原理，实现较为简单的主从复制功能。本文分别介绍mysql和redis的主从复制。<br>    <a id="more"></a></p>
-<h3 id="1-mysql主从复制"><a href="#1-mysql主从复制" class="headerlink" title="1.mysql主从复制"></a>1.mysql主从复制</h3><p>mysql的二进制日志文件，mysql通过该文件进行复制，有两种形式复制，一种基于语句复制，另一种基于行复制。基于语句复制方式，是日志文件保存数据库的执行语句，这种方式存在一些缺陷，如：不能确保所有语句都能正确执行，某些命令语句random（）、date（）等；update或create语句修改大量数据时，导致锁的范围和时间较长；在mysql5.1之后，不在再提供这种复制方式支持，采用行复制方式。基于行复制方式，是日志文件保存数据库的修改行数据，这种方式较上一种方式的优点相对基于语句复制的方式主要有锁范围较小和确保所有语句能够正确执行，缺点主要有数据恢复时间较长和日志保存数据量大。<br>下面介绍主从复制过程简单介绍：<br>1.主库的事务提交后，完成数据更新前，把更新改记录写入到二进制日志文件。<br>2.备库讲主库中的二进制日志数据复制到中继日志。备份数据库启动一个I/O线程与主库建立连接，读取主库中二进制日志数据。<br>3.备库读取中继日志，将数据重放到备库中。重放时采用单线程sql从中继日志读取事件，重放读取事件更新数据到备库，完成数据重放，最终使其与主库中数据保持一致。<br><img src="http://7xr41w.com1.z0.glb.clouddn.com/clipboard.png" alt="复制过程"></p>
-<hr>
-<p>redis待续……</p>
-<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h4><p>《高性能mysql》<br>《redis的设计与实现》</p>
-
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目:"></a>题目:</h3><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>You may assume that each input would have exactly one solution.</p>
+<p>Example:<br>Given nums = [2, 7, 11, 15], target = 9,<br>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].<br><a id="more"></a><br>UPDATE (2016/2/13):The return format had been changed to zero-based indices. Please read the above updated description carefully. </p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> cur = target-nums[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j &lt; nums.length;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cur == nums[j])&#123;</span><br><span class="line">                <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">                result[<span class="number">0</span>] = i;</span><br><span class="line">                result[<span class="number">1</span>] = j;</span><br><span class="line">                <span class="keyword">return</span> result;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;   </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -220,18 +219,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/02/22/leetcode-1-Two-Sum/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          leetcode 1: Two Sum
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/21/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2016/02/22/mysql和redis的主从复制原理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql和redis的主从复制原理</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -266,7 +256,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="mysql和redis的主从复制原理" data-title="mysql和redis的主从复制原理" data-url="http://wuzhjian.github.io/2016/02/22/mysql和redis的主从复制原理/"></div>
+	<div class="ds-thread" data-thread-key="leetcode-1-Two-Sum" data-title="leetcode 1: Two Sum" data-url="http://wuzhjian.github.io/2016/02/22/leetcode-1-Two-Sum/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
