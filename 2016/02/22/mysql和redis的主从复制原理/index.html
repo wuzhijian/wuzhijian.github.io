@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>第一篇博客 | 坚果博客</title>
+  <title>mysql和redis的主从复制原理 | 坚果博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引用Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.Eve">
+  <meta name="description" content="最近工作需要，做一个rdf数据库的主从集群，由于rdf数据库本身不支持主从复制功能，所以考虑从上一层应用实现主从复制。并参考mysql和redis的主从复制实现原理，实现较为简单的主从复制功能。本文分别介绍mysql和redis的主从复制。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇博客">
-<meta property="og:url" content="http://wuzhjian.github.io/2016/02/21/第一篇博客/index.html">
+<meta property="og:title" content="mysql和redis的主从复制原理">
+<meta property="og:url" content="http://wuzhjian.github.io/2016/02/22/mysql和redis的主从复制原理/index.html">
 <meta property="og:site_name" content="坚果博客">
-<meta property="og:description" content="引用Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.Eve">
-<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/638c2068jw1eg0pxopmy5j20p118g77w.jpg">
-<meta property="og:updated_time" content="2016-02-21T15:36:36.517Z">
+<meta property="og:description" content="最近工作需要，做一个rdf数据库的主从集群，由于rdf数据库本身不支持主从复制功能，所以考虑从上一层应用实现主从复制。并参考mysql和redis的主从复制实现原理，实现较为简单的主从复制功能。本文分别介绍mysql和redis的主从复制。">
+<meta property="og:image" content="http://7xr41w.com1.z0.glb.clouddn.com/clipboard.png">
+<meta property="og:updated_time" content="2016-02-22T14:50:35.331Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇博客">
-<meta name="twitter:description" content="引用Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.Eve">
+<meta name="twitter:title" content="mysql和redis的主从复制原理">
+<meta name="twitter:description" content="最近工作需要，做一个rdf数据库的主从集群，由于rdf数据库本身不支持主从复制功能，所以考虑从上一层应用实现主从复制。并参考mysql和redis的主从复制实现原理，实现较为简单的主从复制功能。本文分别介绍mysql和redis的主从复制。">
   
   
   <link rel="stylesheet" href="/css/style.css" type="text/css">
@@ -105,7 +105,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
+						<a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/主从复制/" style="font-size: 10px;">主从复制</a>
 					</div>
 				</section>
 				
@@ -169,11 +169,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-mysql和redis的主从复制原理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/21/第一篇博客/" class="article-date">
-  	<time datetime="2016-02-21T06:54:10.000Z" itemprop="datePublished">2016-02-21</time>
+      <a href="/2016/02/22/mysql和redis的主从复制原理/" class="article-date">
+  	<time datetime="2016-02-22T14:39:06.000Z" itemprop="datePublished">2016-02-22</time>
 </a>
     </div>
   
@@ -186,7 +186,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      第一篇博客
+      mysql和redis的主从复制原理
     </h1>
   
 
@@ -195,7 +195,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主从复制/">主从复制</a></li></ul>
 	</div>
 
         
@@ -206,13 +206,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote><p>Every interaction is both precious and an opportunity to delight.<br>Every interaction is both precious and an opportunity to delight.<br>Every interaction is both precious and an opportunity to delight.<br>Every interaction is both precious and an opportunity to delight.<br>Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.</p>
-<p>Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.<br>Every interaction is both precious and an opportunity to delight.Every interaction is both precious and an opportunity to delight.</p>
-<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank" rel="external">Welcome to Island Marketing</a></cite></footer></blockquote>
-<a id="more"></a>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><figure class="highlight cpp"><figcaption><span>.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="external">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.compact([<span class="number">0</span>, <span class="number">1</span>, <span class="literal">false</span>, <span class="number">2</span>, ‘’, <span class="number">3</span>]);</span><br><span class="line">=&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><a href="http://blog.fens.me" title="粉丝日志" target="_blank">粉丝日志</a>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><img src="http://ww3.sinaimg.cn/mw690/638c2068jw1eg0pxopmy5j20p118g77w.jpg" width="300" height="500" title="这是一张图片">
+        <p>最近工作需要，做一个rdf数据库的主从集群，由于rdf数据库本身不支持主从复制功能，所以考虑从上一层应用实现主从复制。并参考mysql和redis的主从复制实现原理，实现较为简单的主从复制功能。本文分别介绍mysql和redis的主从复制。<br>    <a id="more"></a></p>
+<h3 id="1-mysql主从复制"><a href="#1-mysql主从复制" class="headerlink" title="1.mysql主从复制"></a>1.mysql主从复制</h3><p>mysql的二进制日志文件，mysql通过该文件进行复制，有两种形式复制，一种基于语句复制，另一种基于行复制。基于语句复制方式，是日志文件保存数据库的执行语句，这种方式存在一些缺陷，如：不能确保所有语句都能正确执行，某些命令语句random（）、date（）等；update或create语句修改大量数据时，导致锁的范围和时间较长；在mysql5.1之后，不在再提供这种复制方式支持，采用行复制方式。基于行复制方式，是日志文件保存数据库的修改行数据，这种方式较上一种方式的优点相对基于语句复制的方式主要有锁范围较小和确保所有语句能够正确执行，缺点主要有数据恢复时间较长和日志保存数据量大。<br>下面介绍主从复制过程简单介绍：<br>1.主库的事务提交后，完成数据更新前，把更新改记录写入到二进制日志文件。<br>2.备库讲主库中的二进制日志数据复制到中继日志。备份数据库启动一个I/O线程与主库建立连接，读取主库中二进制日志数据。<br>3.备库读取中继日志，将数据重放到备库中。重放时采用单线程sql从中继日志读取事件，重放读取事件更新数据到备库，完成数据重放，最终使其与主库中数据保持一致。<br><img src="http://7xr41w.com1.z0.glb.clouddn.com/clipboard.png" alt="复制过程"></p>
+<hr>
+<p>redis待续……</p>
+<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h4><p>《高性能mysql》<br>《redis的设计与实现》</p>
+
       
     </div>
     
@@ -258,7 +257,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="第一篇博客" data-title="第一篇博客" data-url="http://wuzhjian.github.io/2016/02/21/第一篇博客/"></div>
+	<div class="ds-thread" data-thread-key="mysql和redis的主从复制原理" data-title="mysql和redis的主从复制原理" data-url="http://wuzhjian.github.io/2016/02/22/mysql和redis的主从复制原理/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
