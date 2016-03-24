@@ -4,21 +4,20 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>leetcode 1: Two Sum | 坚果博客</title>
+  <title>virtuoso数据库使用总结 | 坚果博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目:Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution.
-Example:Given nums = [2, 7,">
+  <meta name="description" content="最近在virtuoso使用过程中遇到三个错误，数据库启动失败、 上传数据文件失败和执行更新操作的sparql语句失败。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode 1: Two Sum">
-<meta property="og:url" content="http://wuzhjian.github.io/2016/02/22/leetcode-1-Two-Sum/index.html">
+<meta property="og:title" content="virtuoso数据库使用总结">
+<meta property="og:url" content="http://wuzhjian.github.io/2016/03/02/virtuoso数据库使用总结/index.html">
 <meta property="og:site_name" content="坚果博客">
-<meta property="og:description" content="题目:Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution.
-Example:Given nums = [2, 7,">
-<meta property="og:updated_time" content="2016-02-22T15:19:38.897Z">
+<meta property="og:description" content="最近在virtuoso使用过程中遇到三个错误，数据库启动失败、 上传数据文件失败和执行更新操作的sparql语句失败。">
+<meta property="og:image" content="http://7xr41w.com1.z0.glb.clouddn.com/1_fdfdfdvdvv.png">
+<meta property="og:image" content="http://7xr41w.com1.z0.glb.clouddn.com/2_gffvdfvc.png">
+<meta property="og:updated_time" content="2016-03-24T14:26:27.559Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode 1: Two Sum">
-<meta name="twitter:description" content="题目:Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution.
-Example:Given nums = [2, 7,">
+<meta name="twitter:title" content="virtuoso数据库使用总结">
+<meta name="twitter:description" content="最近在virtuoso使用过程中遇到三个错误，数据库启动失败、 上传数据文件失败和执行更新操作的sparql语句失败。">
   
   
   <link rel="stylesheet" href="/css/style.css" type="text/css">
@@ -171,11 +170,11 @@ Example:Given nums = [2, 7,">
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-leetcode-1-Two-Sum" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-virtuoso数据库使用总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/22/leetcode-1-Two-Sum/" class="article-date">
-  	<time datetime="2016-02-22T15:13:19.000Z" itemprop="datePublished">2016-02-22</time>
+      <a href="/2016/03/02/virtuoso数据库使用总结/" class="article-date">
+  	<time datetime="2016-03-02T13:09:06.000Z" itemprop="datePublished">2016-03-02</time>
 </a>
     </div>
   
@@ -188,7 +187,7 @@ Example:Given nums = [2, 7,">
         
   
     <h1 class="article-title" itemprop="name">
-      leetcode 1: Two Sum
+      virtuoso数据库使用总结
     </h1>
   
 
@@ -197,7 +196,7 @@ Example:Given nums = [2, 7,">
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RDF/">RDF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/virtuoso/">virtuoso</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
 	</div>
 
         
@@ -208,9 +207,12 @@ Example:Given nums = [2, 7,">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题目"><a href="#题目" class="headerlink" title="题目:"></a>题目:</h3><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>You may assume that each input would have exactly one solution.</p>
-<p>Example:<br>Given nums = [2, 7, 11, 15], target = 9,<br>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].<br><a id="more"></a><br>UPDATE (2016/2/13):The return format had been changed to zero-based indices. Please read the above updated description carefully. </p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> cur = target-nums[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j &lt; nums.length;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cur == nums[j])&#123;</span><br><span class="line">                <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">                result[<span class="number">0</span>] = i;</span><br><span class="line">                result[<span class="number">1</span>] = j;</span><br><span class="line">                <span class="keyword">return</span> result;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;   </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>最近在virtuoso使用过程中遇到三个错误，数据库启动失败、 上传数据文件失败和执行更新操作的sparql语句失败。<br>    <a id="more"></a></p>
+<h3 id="1-数据库启动失败，错误信息："><a href="#1-数据库启动失败，错误信息：" class="headerlink" title="1.数据库启动失败，错误信息："></a>1.数据库启动失败，错误信息：</h3><p>15:19:37 The transaction log file has been produced by server version ‘07.20.3214’. The version of this server is ‘07.10.3207’. If the transaction log is empty or you do not want to replay it then delete it and start the server again. Otherwise replay the log using the server of version ‘07.20.3214’ and make checkpoint and shutdown to ensure that the log is empty, then delete it and start using new version.<br> 解决办法：可以阐释删除掉锁文件，锁删除rm -rf /数据存放路径/virtuoso/db/virtuoso.lck 。</p>
+<h3 id="2-上传数据时，上传数据文件失败，错误信息：Error-42000-Virtuoso-Driver-Virtuoso-Server-FA003-Access-to-‘-root-post-install’-is-denied-due-to-access-control-in-ini-file"><a href="#2-上传数据时，上传数据文件失败，错误信息：Error-42000-Virtuoso-Driver-Virtuoso-Server-FA003-Access-to-‘-root-post-install’-is-denied-due-to-access-control-in-ini-file" class="headerlink" title="2.上传数据时，上传数据文件失败，错误信息：Error 42000: [Virtuoso Driver][Virtuoso Server]FA003: Access to ‘/root/post-install’ is denied due to access control in ini file"></a>2.上传数据时，上传数据文件失败，错误信息：Error 42000: [Virtuoso Driver][Virtuoso Server]FA003: Access to ‘/root/post-install’ is denied due to access control in ini file</h3><p>解决办法：因为存放路径权限限制问题导致上传数据失败，需要把要上传的数据文件，放到virtuoso.ini配置文件中DirsAllowed配置项指定的目录下。</p>
+<h3 id="3-执行更新操作的sparql语句时，执行失败。"><a href="#3-执行更新操作的sparql语句时，执行失败。" class="headerlink" title="3.执行更新操作的sparql语句时，执行失败。"></a>3.执行更新操作的sparql语句时，执行失败。</h3><p>解决办法：virtuoso对更新操作的sparql语句有权限限制，不同连接方式下需要设置相应的权限，下面介绍常用的两种方式。<br>方式一，通过http访问时（如：<a href="http://10.0.10.14:8890/sparql）：" target="_blank" rel="external">http://10.0.10.14:8890/sparql）：</a><br>第一步，打开该页面，并点击选择spraql用户<br><img src="http://7xr41w.com1.z0.glb.clouddn.com/1_fdfdfdvdvv.png" alt="第一步"><br> 第二步，打开下面页面，选择相应权限，添加到右面，保存提交即可<br><img src="http://7xr41w.com1.z0.glb.clouddn.com/2_gffvdfvc.png" alt="第二步"></p>
+<p>方式二，通过tcp访问时（如：10.0.10.14:1111，使用默认dba账户登录），选择dba账户，通过方式的方法即可实现权限赋予。</p>
+
       
     </div>
     
@@ -219,18 +221,9 @@ Example:Given nums = [2, 7,">
     
 <nav id="article-nav">
   
-    <a href="/2016/03/01/virtuoso数据库介绍及安装/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          virtuoso数据库介绍及安装
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/22/mysql和redis的主从复制原理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mysql和redis的主从复制原理</div>
+    <a href="/2016/03/01/virtuoso数据库配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">virtuoso数据库配置</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -265,7 +258,7 @@ Example:Given nums = [2, 7,">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="leetcode-1-Two-Sum" data-title="leetcode 1: Two Sum" data-url="http://wuzhjian.github.io/2016/02/22/leetcode-1-Two-Sum/"></div>
+	<div class="ds-thread" data-thread-key="virtuoso数据库使用总结" data-title="virtuoso数据库使用总结" data-url="http://wuzhjian.github.io/2016/03/02/virtuoso数据库使用总结/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
