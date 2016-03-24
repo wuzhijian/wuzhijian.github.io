@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>virtuoso数据库介绍及安装 | 坚果博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="virtuoso数据库是一个高性能的rdf数据库，可支持百亿条三元组，支持sparql1.1语法查询。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="virtuoso数据库介绍及安装">
+<meta property="og:url" content="http://wuzhjian.github.io/2016/03/01/virtuoso数据库介绍及安装/index.html">
+<meta property="og:site_name" content="坚果博客">
+<meta property="og:description" content="virtuoso数据库是一个高性能的rdf数据库，可支持百亿条三元组，支持sparql1.1语法查询。">
+<meta property="og:updated_time" content="2016-03-24T14:19:26.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="virtuoso数据库介绍及安装">
+<meta name="twitter:description" content="virtuoso数据库是一个高性能的rdf数据库，可支持百亿条三元组，支持sparql1.1语法查询。">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xr41w.com1.z0.glb.clouddn.com/%E5%B0%8FQ%E6%88%AA%E5%9B%BE-20160221230556.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">坚果</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/RDF/" style="font-size: 10px;">RDF</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/virtuoso/" style="font-size: 10px;">virtuoso</a> <a href="/tags/主从复制/" style="font-size: 10px;">主从复制</a> <a href="/tags/数据库安装/" style="font-size: 10px;">数据库安装</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">执念技术，热爱生活...</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">坚果</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xr41w.com1.z0.glb.clouddn.com/%E5%B0%8FQ%E6%88%AA%E5%9B%BE-20160221230556.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">坚果</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-virtuoso数据库介绍及安装" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/01/virtuoso数据库介绍及安装/" class="article-date">
+  	<time datetime="2016-03-01T02:19:06.000Z" itemprop="datePublished">2016-03-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      virtuoso数据库介绍及安装
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RDF/">RDF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/virtuoso/">virtuoso</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库安装/">数据库安装</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>virtuoso数据库是一个高性能的rdf数据库，可支持百亿条三元组，支持sparql1.1语法查询。<br>    <a id="more"></a></p>
+<h3 id="一、开源版本安装包下载地址："><a href="#一、开源版本安装包下载地址：" class="headerlink" title="一、开源版本安装包下载地址："></a>一、开源版本安装包下载地址：</h3><p><a href="https://github.com/openlink/virtuoso-opensource/tree/stable/7" target="_blank" rel="external">https://github.com/openlink/virtuoso-opensource/tree/stable/7</a></p>
+<ol>
+<li>安装依赖：yum install gcc gmake autoconf automake libtool flex bison gperf gawk m4 make openssl-devel readline-devel wget</li>
+<li>下载安装包：wget <a href="https://codeload.github.com/openlink/virtuoso-opensource/zip/stable/7" target="_blank" rel="external">https://codeload.github.com/openlink/virtuoso-opensource/zip/stable/7</a></li>
+<li>解压安装包：unzip 7</li>
+<li>编译安装配置：cd virtuoso-opensource-stable-7/<br>sh autogen.sh<br>./configure –prefix=/usr/local/virtuoso7 –datarootdir=/data/virtuoso –enable-demo-vad –enable-rdb2rdf-vad –enable-tutorial-vad–enable-sparqldemo-vad –enable-rdfmappers-vad –enable-isparql-vad –enable-ods-vad –with-readline –with-mone<br>5.编译：nice make<br>6.安装：make install</li>
+</ol>
+<h3 id="二、启动运行virtuoso："><a href="#二、启动运行virtuoso：" class="headerlink" title="二、启动运行virtuoso："></a>二、启动运行virtuoso：</h3><p>cd /usr/local/virtuoso7/var/lib/virtuoso/db<br>nohup /usr/local/virtuoso7/bin/virtuoso-t -f &amp;(注意：执行该启动命令时，需要先进入到上面的目录中)</p>
+<h3 id="三、停止virtuoso："><a href="#三、停止virtuoso：" class="headerlink" title="三、停止virtuoso："></a>三、停止virtuoso：</h3><p>cd /usr/local/virtuoso7/bin<br>/usr/local/virtuoso7/bin/isql 1111 dba dba -K</p>
+<h3 id="四、virtuoso访问："><a href="#四、virtuoso访问：" class="headerlink" title="四、virtuoso访问："></a>四、virtuoso访问：</h3><p>1.sparql查询地址：localhost:8890/sparql<br>2.web管理地址：localhost:8890/</p>
+<h3 id="五、上传数据到virtuoso："><a href="#五、上传数据到virtuoso：" class="headerlink" title="五、上传数据到virtuoso："></a>五、上传数据到virtuoso：</h3><p>上传xml格式数据: /usr/local/virtuoso7/bin/isql 1111 dba dba exec=”DB.DBA.RDF_LOAD_RDFXML_MT  (file_to_string_output (‘/data/virtuoso/go_datas/go5.xml’), ‘’, ‘test’);”<br>上传nt格式数据: /usr/local/virtuoso7/bin/isql 1111 dba dba exec=”DB.DBA.TTLP_MT  (file_to_string_output (‘/data/virtuoso/go_datas/go5.nt’), ‘’, ‘go’);”</p>
+<h3 id="最后，virtuoso的官方资料参考网址："><a href="#最后，virtuoso的官方资料参考网址：" class="headerlink" title="最后，virtuoso的官方资料参考网址："></a>最后，virtuoso的官方资料参考网址：</h3><p>virtuoso官网:<a href="http://www.openlinksw.com/" target="_blank" rel="external">http://www.openlinksw.com/</a><br>virtuoso github地址:<a href="https://github.com/openlink/virtuoso-opensource/tree/stable/7" target="_blank" rel="external">https://github.com/openlink/virtuoso-opensource/tree/stable/7</a><br>virtuoso官方联系邮箱:Sonja Heward-Mills<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x73;&#110;&#101;&#x76;&#105;&#116;&#x74;&#x40;&#x6f;&#112;&#x65;&#110;&#x6c;&#105;&#x6e;&#107;&#x73;&#x77;&#46;&#99;&#111;&#x6d;">&#x73;&#110;&#101;&#x76;&#105;&#116;&#x74;&#x40;&#x6f;&#112;&#x65;&#110;&#x6c;&#105;&#x6e;&#107;&#x73;&#x77;&#46;&#99;&#111;&#x6d;</a>;Hugh Williams<a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#58;&#104;&#119;&#105;&#x6c;&#108;&#x69;&#97;&#109;&#x73;&#64;&#x6f;&#x70;&#101;&#110;&#x6c;&#x69;&#x6e;&#107;&#x73;&#x77;&#x2e;&#99;&#111;&#109;">&#104;&#119;&#105;&#x6c;&#108;&#x69;&#97;&#109;&#x73;&#64;&#x6f;&#x70;&#101;&#110;&#x6c;&#x69;&#x6e;&#107;&#x73;&#x77;&#x2e;&#99;&#111;&#109;</a>;<br>virtuoso执行计划查看地址：<a href="http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VirtTipsAndTricksAanalyzingSPARQLQuery" target="_blank" rel="external">http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VirtTipsAndTricksAanalyzingSPARQLQuery</a><br>virtuoso的集群介绍及配置地址：<br>a.复制集群：<a href="http://docs.openlinksw.com/virtuoso/rdfgraphreplication.html" target="_blank" rel="external">http://docs.openlinksw.com/virtuoso/rdfgraphreplication.html</a><br>b.分片集群：<a href="http://docs.openlinksw.com/virtuoso/clusteroperation.html" target="_blank" rel="external">http://docs.openlinksw.com/virtuoso/clusteroperation.html</a><br>其他网址:<br> <a href="http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VirtClusteringDiagrams" target="_blank" rel="external">http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VirtClusteringDiagrams</a><br> <a href="http://docs.openlinksw.com/virtuoso/databaseadmsrv.html#perfdiag" target="_blank" rel="external">http://docs.openlinksw.com/virtuoso/databaseadmsrv.html#perfdiag</a><br> <a href="http://docs.openlinksw.com/virtuoso/rdfperformancetuning.html" target="_blank" rel="external">http://docs.openlinksw.com/virtuoso/rdfperformancetuning.html</a><br> <a href="http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VirtClusteringDiagrams" target="_blank" rel="external">http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VirtClusteringDiagrams</a><br> <a href="http://virtuoso.openlinksw.com/whitepapers/LOD2_D2.1.5_LOD_Cloud_Hosted_On_The_LOD2_Knowledge_Store_Cluster_500B_Triples.pdf" target="_blank" rel="external">http://virtuoso.openlinksw.com/whitepapers/LOD2_D2.1.5_LOD_Cloud_Hosted_On_The_LOD2_Knowledge_Store_Cluster_500B_Triples.pdf</a> LOD2  500 Billion Triple Benchmark<br> <a href="http://wifo5-03.informatik.uni-mannheim.de/bizer/berlinsparqlbenchmark/results/V7/index.html#comparison" target="_blank" rel="external">http://wifo5-03.informatik.uni-mannheim.de/bizer/berlinsparqlbenchmark/results/V7/index.html#comparison</a> Berlin SPARQL Benchmark<br> <a href="http://static.lod2.eu/Deliverables/D2.1.4.pdf" target="_blank" rel="external">http://static.lod2.eu/Deliverables/D2.1.4.pdf</a> – 150 Billion Triples Benchmark<br> <a href="http://ldbcouncil.org/benchmarks/spb" target="_blank" rel="external">http://ldbcouncil.org/benchmarks/spb</a> – Semantic Publishing Benchmark<br> <a href="http://ldbcouncil.org/benchmarks/snb" target="_blank" rel="external">http://ldbcouncil.org/benchmarks/snb</a> – Social Network Benchmark</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/22/leetcode-1-Two-Sum/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetcode 1: Two Sum</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="virtuoso数据库介绍及安装" data-title="virtuoso数据库介绍及安装" data-url="http://wuzhjian.github.io/2016/03/01/virtuoso数据库介绍及安装/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"wuzhijian"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 坚果
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: undefined,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
